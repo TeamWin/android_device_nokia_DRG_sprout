@@ -5,31 +5,17 @@
 # mount point    fstype     device                 device2                        flags
 
 /boot            emmc              /dev/block/bootdevice/by-name/boot       flags=slotselect;backup=1;flashimg=1
-/abl             emmc              /dev/block/bootdevice/by-name/abl        flags=slotselect;backup=1;flashimg=1
-/bluetooth       emmc              /dev/block/bootdevice/by-name/bluetooth  flags=slotselect;backup=1;flashimg=1
-/cda             emmc              /dev/block/bootdevice/by-name/cda        flags=slotselect;backup=1;flashimg=1
-/cmnlib64        emmc              /dev/block/bootdevice/by-name/cmnlib64   flags=slotselect;backup=1;flashimg=1
-/cmnlib          emmc              /dev/block/bootdevice/by-name/cmnlib     flags=slotselect;backup=1;flashimg=1
-/devcfg          emmc              /dev/block/bootdevice/by-name/devcfg     flags=slotselect;backup=1;flashimg=1
-/dsp             emmc              /dev/block/bootdevice/by-name/dsp        flags=slotselect;backup=1;flashimg=1
-/hidden          emmc              /dev/block/bootdevice/by-name/hidden     flags=slotselect;backup=1;flashimg=1
-/hyp             emmc              /dev/block/bootdevice/by-name/hyp        flags=slotselect;backup=1;flashimg=1
-/keymaster       emmc              /dev/block/bootdevice/by-name/keymaster  flags=slotselect;backup=1;flashimg=1
-/mdtp            emmc              /dev/block/bootdevice/by-name/mdtp       flags=slotselect;backup=1;flashimg=1
-/mdtpsecapp      emmc              /dev/block/bootdevice/by-name/mdtpsecapp flags=slotselect;backup=1;flashimg=1
-/modem           emmc              /dev/block/bootdevice/by-name/modem      flags=slotselect;backup=1;flashimg=1
-/nvdef           emmc              /dev/block/bootdevice/by-name/nvdef      flags=slotselect;backup=1;flashimg=1
-/pmic            emmc              /dev/block/bootdevice/by-name/pmic       flags=slotselect;backup=1;flashimg=1
-/rpm             emmc              /dev/block/bootdevice/by-name/rpm        flags=slotselect;backup=1;flashimg=1
-/splash          emmc              /dev/block/bootdevice/by-name/splash     flags=slotselect;backup=1;flashimg=1
-/systeminfo      emmc              /dev/block/bootdevice/by-name/systeminfo flags=slotselect;backup=1;flashimg=1
-/tz              emmc              /dev/block/bootdevice/by-name/tz         flags=slotselect;backup=1;flashimg=1
-/xbl             emmc              /dev/block/bootdevice/by-name/xbl        flags=slotselect;backup=1;flashimg=1
 /system          ext4              /dev/block/bootdevice/by-name/system     flags=slotselect;backup=1;display="System";
 /system_image    emmc              /dev/block/bootdevice/by-name/system     flags=slotselect
 /data            ext4              /dev/block/bootdevice/by-name/userdata   flags=encryptable=footer;backup=1;display="Data";
 /vendor          ext4              /dev/block/bootdevice/by-name/vendor     flags=slotselect;display="Vendor";backup=1;wipeingui
 /vendor_image    emmc              /dev/block/bootdevice/by-name/vendor     flags=slotselect
+/persist         ext4              /dev/block/bootdevice/by-name/persist    flags=display="Persist";backup=1
+/bt_firmware     vfat              /dev/block/bootdevice/by-name/bluetooth  flags=display="Bluetooth";backup=1;slotselect
+/modem		 emmc              /dev/block/bootdevice/by-name/modem      flags=slotselect;backup=1;display="Modem"
+/firmware        vfat              /dev/block/bootdevice/by-name/modem      flags=display="Firmware";slotselect;backup=1;mounttodecrypt;fsflags=context=u:object_r:firmware_file:s0
+/efs1            emmc              /dev/block/bootdevice/by-name/modemst1   flags=backup=1;display=EFS
+/efs2            emmc              /dev/block/bootdevice/by-name/modemst2   flags=backup=1;subpartitionof=/efs1
 
 # Removable storage
 /usb-otg         auto              /dev/block/sda1         /dev/block/sda   flags=removable;storage;display="USB OTG"
