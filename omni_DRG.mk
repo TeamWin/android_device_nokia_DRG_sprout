@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+ALLOW_MISSING_DEPENDENCIES=true
+
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
@@ -43,7 +45,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script \
     update_engine \
-    update_engine_sideload \
     update_verifier
 
 # The following modules are included in debuggable builds only.
