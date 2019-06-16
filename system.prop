@@ -2,4 +2,5 @@ ro.display.series=Nokia 6.1 Plus
 ro.product.board=sdm660
 ro.board.platform=sdm660
 ro.build.version.release=9
-ro.build.version.security_patch=2025-12-31
+ro.build.version.security_patch=2019-06-05
+
