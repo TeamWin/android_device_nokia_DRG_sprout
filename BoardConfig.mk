@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-PLATFORM_PATH := device/nokia/DRG
+PLATFORM_PATH := device/nokia/DRG_sprout
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
@@ -43,10 +43,10 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := kryo
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_2ND_CPU_VARIANT := cortex-a73
 
 # Enable CPUSets
 ENABLE_CPUSETS := true
@@ -64,7 +64,7 @@ BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_SECOND_OFFSET := 0x00f00000
-TARGET_PREBUILT_KERNEL := device/nokia/DRG/prebuilt/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := device/nokia/DRG_sprout/prebuilt/Image.gz-dtb
 
 
 # Partitions
@@ -88,12 +88,11 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 AB_OTA_UPDATER := true
 
 # Encryption
-PLATFORM_SECURITY_PATCH := 2019-06-05
+PLATFORM_SECURITY_PATCH := 2025-01-05
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 
 # TWRP specific build flags
-BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
@@ -127,8 +126,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Extras
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_USE_LEDS_HAPTICS := true
-USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := device/nokia/DRG/installer
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_Y_OFFSET := 80

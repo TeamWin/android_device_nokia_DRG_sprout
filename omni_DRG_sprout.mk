@@ -67,12 +67,12 @@ PRODUCT_PACKAGES += \
 	
 	# Partitions (listed in the file) to be wiped under recovery.
 TARGET_RECOVERY_WIPE := \
-    device/nokia/DRG/recovery/root/etc/recovery.wipe	
+    device/nokia/DRG_sprout/recovery/root/etc/recovery.wipe	
 
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_DRG
-PRODUCT_DEVICE := DRG
+PRODUCT_NAME := omni_DRG_sprout
+PRODUCT_DEVICE := DRG_sprout
 PRODUCT_BRAND := Nokia
 PRODUCT_MODEL := Nokia 6.1 Plus
 PRODUCT_MANUFACTURER := Nokia
