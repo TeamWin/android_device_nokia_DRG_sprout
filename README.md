@@ -1,4 +1,4 @@
- Nokia 6.1 plus (codenamed _"DRG"_) are high-end mid-range smartphones from Nokia.
+ Nokia 6.1 plus (codenamed _"DRG_sprout"_) are high-end mid-range smartphones from Nokia.
 
 Nokia 6.1 Plus was announced and released in july 2018.
 
@@ -19,5 +19,5 @@ Nokia 6.1 Plus was announced and released in july 2018.
 
 How to build
 
-. build/envsetup.sh && lunch omni_DRG-eng && make -j32 recoveryimage
+. build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage
 
