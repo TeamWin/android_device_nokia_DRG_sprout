@@ -58,13 +58,9 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 
 PRODUCT_PACKAGES += \
     qcom_decrypt \
-    qcom_decrypt_fbe
+    qcom_decrypt_fbe \
+    tzdata_twrp
 
-
-
-# Time Zone data for recovery
-PRODUCT_COPY_FILES += \
-    system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_DRG
