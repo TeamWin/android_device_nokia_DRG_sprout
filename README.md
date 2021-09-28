@@ -1,23 +1,29 @@
- Nokia 6.1 plus (codenamed _"DRG_sprout"_) are high-end mid-range smartphones from Nokia.
+# Device Tree for Nokia 6.1 Plus (DRG)
 
-Nokia 6.1 Plus was announced and released in july 2018.
+The Nokia 6.1 Plus/Nokia X6 (codenamed _"Dragon"_, TLA _"DRG"_) is a mid-range smartphone from Nokia.
+It was released in July 2018.
 
-## Device specifications
+| Basic                   | Spec Sheet                                                                                                                     |
+| -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
+| CPU                     | Octa-core 4x1.8 & 4x1.6 GHz Kryo 260 (Gold & Silver)                                                                           |
+| Chipset                 | Qualcomm SDM660 Snapdragon 636                                                                                                 |
+| GPU                     | Adreno 509                                                                                                                     |
+| Memory                  | 4/6 GB RAM                                                                                                                     |
+| Shipped Android Version | 8.1                                                                                                                            |
+| Storage                 | 32/64 GB                                                                                                                          |
+| Battery                 | Non-removable Li-Po 3060 mAh battery                                                                                           |
+| Display                 | 1080 x 2280 pixels, 19:9 ratio (~432 ppi density)                                                                              |
+| Camera (Back)           | 16 MP, f/2.0, 1.0µm, PDAF, 5 MP, f/2.4, (depth)                                                                                |
+| Camera (Front)          | 16 MP, f/2.0, 1/3.1", 1.0µm                                                                                                    |
 
-| Device       |   Nokia 6.1 plus                                |
-| -----------: | :---------------------------------------------- |
-| SoC          | Qualcomm SDM660 Snapdragon 636                  |
-| CPU          | 8x Qualcomm® Kryo™ 260 up to 1.8GHz             |
-| GPU          | Adreno 509                                      |
-| Memory       | 4GB                                             |
-| Shipped Android version | 8.1.0                                |
-| Storage      | 64GB eMMC 5.1 flash storage                     |
-| Battery      | Non-removable Li-Po 3000 mAh                    |
-| Dimensions   | 158.6 x 75.4 x 8.05 mm                          |
-| Display      | 2160 x 1080 (18:9), 5.99 inch                   |
+![Nokia 6.1 Plus](https://fdn2.gsmarena.com/vv/pics/nokia/nokia-x6-3.jpg)
 
+## Build instructions
 
-How to build
+```
+# Compiling
+$ . build/envsetup.sh
+$ lunch omni_DRG-eng
+$ make -jx recoveryimage //replace x in -jx with number of cores you want to allot for compilation
 
-. build/envsetup.sh && lunch omni_DRG_sprout-eng && make -j32 recoveryimage
-
+```

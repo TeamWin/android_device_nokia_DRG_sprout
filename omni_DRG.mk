@@ -1,5 +1,5 @@
 #
-# Copyright 2012 The Android Open Source Project
+# Copyright 2018 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,16 +14,10 @@
 # limitations under the License.
 #
 
-ALLOW_MISSING_DEPENDENCIES=true
+# Release name
+PRODUCT_RELEASE_NAME := DRG_sprout
 
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
-
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit language packages
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
@@ -33,8 +27,7 @@ AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
     boot \
-    system \
-    vendor
+    system
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -45,6 +38,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script \
     update_engine \
+    update_engine_sideload \
     update_verifier
 
 # The following modules are included in debuggable builds only.
@@ -58,21 +52,17 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.sdm660 \
+    libcutils \
     libgptutils \
     libz
 
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
-	
-	# Partitions (listed in the file) to be wiped under recovery.
-TARGET_RECOVERY_WIPE := \
-    device/nokia/DRG_sprout/recovery/root/etc/recovery.wipe	
-
+# Time Zone data for recovery
+PRODUCT_COPY_FILES += \
+    system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_DRG_sprout
-PRODUCT_DEVICE := DRG_sprout
+PRODUCT_NAME := omni_DRG
+PRODUCT_DEVICE := DRG
+PRODUCT_MANUFACTURER := FIH
 PRODUCT_BRAND := Nokia
 PRODUCT_MODEL := Nokia 6.1 Plus
-PRODUCT_MANUFACTURER := Nokia
