@@ -1,13 +1,36 @@
-# mount point	fstype	device					device2				flags
-/boot		emmc	/dev/block/bootdevice/by-name/boot					flags=slotselect
-/system		ext4	/dev/block/bootdevice/by-name/system					flags=slotselect
-/system_image	emmc	/dev/block/bootdevice/by-name/system					flags=slotselect
-/vendor		ext4	/dev/block/bootdevice/by-name/vendor					flags=backup=1;slotselect
-/vendor_image	emmc	/dev/block/bootdevice/by-name/vendor					flags=backup=1;slotselect
-/data		ext4	/dev/block/bootdevice/by-name/userdata
-/firmware	vfat	/dev/block/bootdevice/by-name/modem					flags=display="Firmware";mounttodecrypt;slotselect;fsflags=ro
-/misc		emmc	/dev/block/bootdevice/by-name/misc
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+# mount point    fstype     device                 device2                        flags
+
+/boot            emmc              /dev/block/bootdevice/by-name/boot       flags=slotselect;backup=1;flashimg=1
+/abl             emmc              /dev/block/bootdevice/by-name/abl        flags=slotselect;backup=1;flashimg=1
+/bluetooth       emmc              /dev/block/bootdevice/by-name/bluetooth  flags=slotselect;backup=1;flashimg=1
+/cda             emmc              /dev/block/bootdevice/by-name/cda        flags=slotselect;backup=1;flashimg=1
+/cmnlib64        emmc              /dev/block/bootdevice/by-name/cmnlib64   flags=slotselect;backup=1;flashimg=1
+/cmnlib          emmc              /dev/block/bootdevice/by-name/cmnlib     flags=slotselect;backup=1;flashimg=1
+/devcfg          emmc              /dev/block/bootdevice/by-name/devcfg     flags=slotselect;backup=1;flashimg=1
+/dsp             emmc              /dev/block/bootdevice/by-name/dsp        flags=slotselect;backup=1;flashimg=1
+/hidden          emmc              /dev/block/bootdevice/by-name/hidden     flags=slotselect;backup=1;flashimg=1
+/hyp             emmc              /dev/block/bootdevice/by-name/hyp        flags=slotselect;backup=1;flashimg=1
+/keymaster       emmc              /dev/block/bootdevice/by-name/keymaster  flags=slotselect;backup=1;flashimg=1
+/mdtp            emmc              /dev/block/bootdevice/by-name/mdtp       flags=slotselect;backup=1;flashimg=1
+/mdtpsecapp      emmc              /dev/block/bootdevice/by-name/mdtpsecapp flags=slotselect;backup=1;flashimg=1
+/modem           emmc              /dev/block/bootdevice/by-name/modem      flags=slotselect;backup=1;flashimg=1
+/nvdef           emmc              /dev/block/bootdevice/by-name/nvdef      flags=slotselect;backup=1;flashimg=1
+/pmic            emmc              /dev/block/bootdevice/by-name/pmic       flags=slotselect;backup=1;flashimg=1
+/rpm             emmc              /dev/block/bootdevice/by-name/rpm        flags=slotselect;backup=1;flashimg=1
+/splash          emmc              /dev/block/bootdevice/by-name/splash     flags=slotselect;backup=1;flashimg=1
+/systeminfo      emmc              /dev/block/bootdevice/by-name/systeminfo flags=slotselect;backup=1;flashimg=1
+/tz              emmc              /dev/block/bootdevice/by-name/tz         flags=slotselect;backup=1;flashimg=1
+/xbl             emmc              /dev/block/bootdevice/by-name/xbl        flags=slotselect;backup=1;flashimg=1
+/system          ext4              /dev/block/bootdevice/by-name/system     flags=slotselect;backup=1;display="System";
+/system_image    emmc              /dev/block/bootdevice/by-name/system     flags=slotselect
+/data            ext4              /dev/block/bootdevice/by-name/userdata   flags=encryptable=footer;backup=1;display="Data";
+/vendor          ext4              /dev/block/bootdevice/by-name/vendor     flags=slotselect;display="Vendor";backup=1;wipeingui
+/vendor_image    emmc              /dev/block/bootdevice/by-name/vendor     flags=slotselect
 
 # Removable storage
-/sdcard1	auto	/dev/block/mmcblk1p1			/dev/block/mmcblk1		flags=display="MicroSD";storage;wipeingui;removable
-/usb_otg	vfat	/dev/block/sda1				/dev/block/sda			flags=display="USB-OTG";storage;wipeingui;removable
+/usb-otg         auto              /dev/block/sda1         /dev/block/sda   flags=removable;storage;display="USB OTG"
+/sdcard1         auto              /dev/block/mmcblk1p1                     flags=display="MicroSD";storage;wipeingui;removable
