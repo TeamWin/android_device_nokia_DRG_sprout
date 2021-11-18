@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_DRG.mk
+    $(LOCAL_DIR)/omni_DRG_sprout.mk
