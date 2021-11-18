@@ -1,6 +1,6 @@
-# Device Tree for Nokia 6.1 Plus (DRG)
+# Device Tree for Nokia 6.1 Plus (DRG_sprout)
 
-The Nokia 6.1 Plus/Nokia X6 (codenamed _"Dragon"_, TLA _"DRG"_) is a mid-range smartphone from Nokia.
+The Nokia 6.1 Plus/Nokia X6 (codenamed _"Dragon"_, TLA _"DRG_sprout"_) is a mid-range smartphone from Nokia.
 It was released in July 2018.
 
 | Basic                   | Spec Sheet                                                                                                                     |
