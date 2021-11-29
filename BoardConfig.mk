@@ -26,6 +26,9 @@
 LOCAL_PATH := device/nokia/DRG_sprout
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := DRG_sprout,DRG,Dragon
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
